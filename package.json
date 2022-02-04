@@ -1,0 +1,30 @@
+{
+  "name": "1.e-commerce",
+  "version": "1.0.0",
+  "description": "- Create a public repository: `sneakers-shop`\r - Duo\r - Deadline: 12/10/2021 - 17:00\r - Submission form: https://forms.gle/VTps6ofSSDgb7KNh6",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --public-url ./ && cp -R src/assets/images dist/images",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinMons1/BeCode.E-CommerceDesign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinMons1/BeCode.E-CommerceDesign/issues"
+  },
+  "homepage": "https://github.com/KevinMons1/BeCode.E-CommerceDesign",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "sass": "^1.42.1"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "parcel": "^2.0.0-rc.0"
+  }
+}

@@ -1,0 +1,285 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+@import "./_functions.scss";
+
+@import "./style-mediaQueries.scss";
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
+}
+
+// --------------------------------------------------
+// Header
+// --------------------------------------------------
+
+header {
+    @include flex(space-between);
+    width: 100%;
+    padding: 0 10px;
+
+    img {
+        margin: 8px;
+    }
+
+    .header-left {
+        width: 100%;
+        @include flex(flex-start);
+    }
+
+    .header-right  {
+        @include flex(flex-end);
+
+        .nav-basket {
+            position: relative;
+
+            .nav-basket-count {
+                @include flex(center);
+                position: absolute;
+                width: 20px;
+                top: 5px;
+                right: 5px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: $primaryOrange;
+                visibility: hidden;
+                
+                p {
+                    font-size: 11px;
+                    color: #fff;
+                }
+            }
+        }
+
+        img {
+            width: 25px;
+        }
+    
+    }
+
+    nav {
+        .nav-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background: #000;
+            visibility: hidden;
+            opacity: 0.8;
+            z-index: 15;
+        }
+
+        .nav-content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 200px;
+            padding: 25px;
+            background-color: #fff;
+            -webkit-transform: translate(-100%);
+                -ms-transform: translate(-100%);
+                    transform: translate(-100%);
+            -webkit-transition: 0.4s ease-in-out;
+            -o-transition: 0.4s ease-in-out;
+            transition: 0.4s ease-in-out;
+            z-index: 20;
+
+            .close-hamburger {
+                cursor: pointer;
+            }
+
+            ul {
+                li {
+                    margin: 15px 0;
+    
+                    a {
+                        color: $veryvarkblue;
+                        font-weight: $bold;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+// --------------------------------------------------
+// Basket
+// --------------------------------------------------
+
+.basket-content {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    width: 95%;
+    min-height: 35vh;
+    border-radius: 10px;
+    background-color: #fff;
+    -webkit-transform: translate(-50%, -200%);
+        -ms-transform: translate(-50%, -200%);
+            transform: translate(-50%, -200%);
+    -webkit-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    z-index: 9;
+
+    -webkit-box-shadow: -4px 46px 104px -30px rgba(0,0,0,0.52);
+    box-shadow: -4px 46px 104px -30px rgba(0,0,0,0.52);
+
+    h3 {
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .basket-empty {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        color: $darkgrayish;
+        font-weight: $bold
+    }
+
+    .basket-checkout {
+        margin: 10px;
+        display: none;
+
+        button {
+            @include btnOrange();
+        }
+    }
+
+    .basket-content-center {
+        max-height: 50vh;
+        overflow-y: scroll;
+    }
+
+    .basket-item {
+        @include flex(space-between);
+        padding: 25px 20px;
+        width: 100%;
+
+        img {
+            width: 50px;
+            border-radius: 5px;
+        }
+
+        .basket-item-box {
+            @include flex(flex-start)
+        }
+
+        .basket-item-text {
+            margin-left: 10px;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        .basket-item-delete {
+            width: 15px;
+        }
+    
+    }
+
+}
+
+// --------------------------------------------------
+// Section content
+// --------------------------------------------------
+
+.section-content {
+    padding: 15px;
+
+    h2 {
+        color: $primaryOrange;
+        font-size: 16px;
+    }
+
+    h1 {
+        margin: 25px 0;
+        font-size: 25px;
+        font-weight: $bold;
+    }
+
+    p {
+        color: $darkgrayish;
+    }
+
+    .section-content-price {
+        @include flex(space-between);
+        width: 100%;
+        margin: 25px 0;
+
+        div {
+            @include flex(flex-start);
+            width: 100%;
+            font-weight: $bold;
+            
+
+            p:nth-child(1) {
+                color: black;
+                font-size: 25px;
+            }
+
+            p:nth-child(2) {
+                color: $primaryOrange;
+                margin-left: 25px;
+            }
+        }
+    }
+
+    .section-content-count {
+        @include flex(space-between);
+        width: 100%;
+
+        input {
+            border: none;
+            background: none;
+            text-align: center;
+            color: black;
+            font-weight: $bold;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .section-content-checkout {
+        @include btnOrange();
+        @include flex(center);
+        margin: 25px 0;
+
+        span {
+            margin-left: 10px;
+        }
+    }
+}
+

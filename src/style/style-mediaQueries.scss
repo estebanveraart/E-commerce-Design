@@ -1,0 +1,335 @@
+@media screen and (min-width: 768px) {
+    .wrapper {
+        padding: 15px 50px;
+    }
+
+// --------------------------------------------------
+// Header
+// --------------------------------------------------
+
+    header {
+        padding-bottom: 25px!important;
+        border-bottom: 1px solid rgb(197, 197, 197);
+
+        .header-right {
+            img:nth-child(2) {
+                position: relative;
+                width: 50px!important;
+                border-radius: 50%;
+                border: 2px solid $primaryOrange;
+            }
+        }
+
+        .hamburger {
+            position: absolute;
+            display: none;
+        }
+        
+        .nav-bg {
+            display: none;
+        }
+    
+        nav {
+            @include flex(flex-start);
+            width: 80%;
+    
+            .nav-content {
+                @include flex(center);
+                position: relative!important;
+                width: 100%!important;
+                height: 50px!important;
+                background: transparent!important;
+                transform: translate(0)!important;
+                z-index: 0;
+        
+                .close-hamburger {
+                    display: none;
+                    cursor: pointer;
+                }
+        
+                ul {
+                    @include flex(space-around);
+                    width: 100%;
+
+                    li {
+                        position: relative;
+                        margin: 15px 0;
+                        opacity: 0.8;
+        
+                        a {
+                            color: $veryvarkblue;
+                            font-weight: $bold;
+                        }
+                    }
+    
+                    .nav-active {
+                        opacity: 1;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: calc(100% + 45px);
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background-color: $primaryOrange;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+// --------------------------------------------------
+// Basket
+// --------------------------------------------------
+
+    .basket-content {
+        width: 350px!important;
+        top: 75px!important;
+        left: 75%!important;
+        z-index: 21!important;
+    }
+
+// --------------------------------------------------
+// Main
+// --------------------------------------------------
+
+    main {
+        height: 100vh;
+        width: 100%;
+
+        article {
+            @include flex(space-around);
+            
+            // --------------------------------------------------
+            // Section content
+            // --------------------------------------------------
+            .section-content {
+                width: 45%;
+            }
+        }
+
+    }
+// -----------------------------------------------------
+//                        SLIDER
+// -----------------------------------------------------
+
+    .ShowDes{
+
+        display: -webkit-box;
+
+        display: -ms-flexbox;
+
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+
+        .ShowImg{
+
+            position: relative;
+            width: 45%;
+        
+            .SvgPre{
+
+                position : absolute;
+                top: 40%;
+                left: 5%;
+                
+            }
+        
+            .SvgNext{
+
+                position : absolute;
+                top: 40%;
+                left: 90%;
+            }
+        
+            .Show2{
+
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin-left: 5%;
+
+            }
+
+            .ShowPrin{
+        
+                position: relative;
+                width: 70%;
+                margin-top: 5%;
+                margin-left: 13%;
+                border-radius: 50px;
+            
+            }
+            
+            .thumb1, .thumb2, .thumb3, .thumb4{
+            
+                width: 80%;
+                margin-top: 20%;
+                border-radius: 10px;
+                margin-bottom: 20%;
+            
+            }
+        
+        }
+
+        .section-content{
+
+            width: 55%;
+
+        }
+
+    }
+
+    .ShowAside{
+
+        position: fixed;
+        z-index: 1000;
+        width: 100vw;
+
+        .blabla{
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color:grey;
+            opacity: 0.9;
+            z-index: -1;
+            display: none;
+
+        }
+        
+        .ShowPrinPrin{
+
+            width: 40%;   
+            margin-left:30%;    
+            margin-top: 2%; 
+            border-radius: 10%;
+
+        }
+
+        .deleteAside{
+
+            position: absolute;
+            top: 5%;
+            left: 75%;
+            border-radius: 50%;
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+
+        }
+
+        .PreviousPrin{
+
+            position : absolute;
+            top: 35%;
+            left: 28%;
+            border-radius: 50%;
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+            
+        }
+
+        .NextPrin{
+
+            position : absolute;
+            top: 35%;
+            left: 69%;
+            border-radius: 50%;
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+
+        }
+
+        .Show2Prin{
+
+            display: flex;
+            margin-top: 2%;
+            margin-left: 22%;
+        
+
+            .thumb1Prin, .thumb2Prin, .thumb3Prin, .thumb4Prin{
+
+                border-radius: 20%;
+                margin-left: 20px;
+            
+            }
+        }
+
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    nav {
+        width: 60%!important;
+    }
+}
+
+//-----------------------------------------------
+//                     SLIDER MOBILE
+//-----------------------------------------------
+
+@media screen and (max-width: 768px) {
+
+    .ShowAside{
+
+        display: none;
+
+    }
+
+    .ShowDes{
+
+        display: flex;
+        flex-direction: column;
+
+        .ShowPrin{
+
+            position: relative;
+            width: 100%;
+
+        }
+
+        .ShowImg{
+
+            position: relative;
+
+        }
+
+        .SvgPre{
+
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            z-index: 2;
+        
+        }
+
+        .SvgNext{
+
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            z-index: 10000;
+
+        }
+
+
+        .Show2{
+
+            display: none;
+    
+        }
+
+    }
+
+}
